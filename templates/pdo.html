@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/pdoStyle.css') }}">
+
+    <title>Home</title>
+
+    <style>
+        #clickable{
+            text-decoration: underline;
+        }
+
+        #clickable:hover{
+            color: red;
+            font-size: 1.1em;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="align">
+
+        <div class="center-1">
+
+
+            <h1>Unresolved Complaints</h1>
+            {% if(cunres!=0) %}
+
+                <div>
+                    <table>
+                        <tr>
+                            <th>Complaint Name</th>
+                            <th>Complaint Details</th>
+                            <th>Complaint Registered By</th>
+                            <th>Complaint Status</th>
+                            <th>Complaint Location</th>
+                            <th>Update</th>
+                        </tr>
+
+                        {% for complaint in ucomplaints %}
+                        <tr>
+                            <td>{{complaint[1]}}</td>
+                            <td>{{complaint[2]}}</td>
+                            <td>{{complaint[4]}}</td>
+                            <td>{{complaint[6]}}</td>
+                            <td>{{complaint[8]}}</td>
+                            <td onclick="location.href='/complaintStatus/{{complaint[0]}}'" id="clickable"> Click to Update </td>
+                        </tr>
+                        {% endfor %}
+                    </table>
+                </div>
+
+            {% else %}
+                No Unresolved Complaints
+            {% endif %}
+        </div>
+
+        <div class="center-2">
+
+
+            <h1>Resolved Complaints</h1>
+            {% if(cres!=0) %}
+                <div>
+                    <table>
+                        <tr>
+                            <th>Complaint Name</th>
+                            <th>Complaint Details</th>
+                            <th>Complaint Registered By</th>
+                            <th>Complaint Status</th>
+                            <th>Feedback</th>
+                        </tr>
+
+                        {% for complaint in rcomplaints %}
+                        <tr>
+                            <td>{{complaint[1]}}</td>
+                            <td>{{complaint[2]}}</td>
+                            <td>{{complaint[4]}}</td>
+                            <td>{{complaint[6]}}</td>
+                            <td>{{complaint[7]}}</td>
+                        </tr>
+                        {% endfor %}
+                    </table>
+                </div>
+
+            {% else %}
+                No Resolved Complaints
+            {% endif %}
+        </div>
+
+    </div>
+
+</body>
+</html>

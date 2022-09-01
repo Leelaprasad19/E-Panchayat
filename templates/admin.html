@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/adminStyle.css') }}">
+    <title>Admin</title>
+
+    <style>
+
+        body{
+            width: fit-content;
+        }
+
+        #clickable{
+            text-decoration: underline;
+        }
+
+        #clickable:hover{
+            color: red;
+            font-size: 1.1em;
+            cursor: pointer;
+        }
+    </style>
+
+</head>
+<body>
+    
+    <div class="align">
+        <div class="center-1">
+            <h1>Panchayat Development Officers List</h1>
+
+            {% if(cpdos!=0) %}
+
+                <div>
+                    <table>
+                        <tr>
+                            <th>Username</th>
+                            <th>Address</th>
+                            <th>Delete Officer</th>
+                        </tr>
+
+                        {% for pdo in pdos %}
+                        <tr>
+                            <td>{{pdo[1]}}</td>
+                            <td>{{pdo[3]}}</td>
+                            <td onclick="location.href='/delete/{{pdo[0]}}'" id="clickable"> Delete </td>
+                        </tr>
+                        {% endfor %}
+                    </table>
+                </div>
+
+            {% else %}
+                No Unresolved Complaints
+            {% endif %}
+
+            <br>
+            <input type="button" value="ADD PDO" onclick="location.href='/details'">
+            <br>
+        </div>
+    
+
+        <div class="center-2">
+            <h1>Internet Center Users List</h1>
+
+            {% if(cusers!=0) %}
+
+                <div>
+                    <table>
+                        <tr>
+                            <th>Username</th>
+                            <th>Address</th>
+                            <th>Delete User</th>
+                        </tr>
+
+                        {% for user in users %}
+                        <tr>
+                            <td>{{user[1]}}</td>
+                            <td>{{user[3]}}</td>
+                            <td onclick="location.href='/delete/{{user[0]}}'" id="clickable"> Delete </td>
+                        </tr>
+                        {% endfor %}
+                    </table>
+                </div>
+
+            {% else %}
+                No Unresolved Complaints
+            {% endif %}
+        </div>
+    </div>
+
+</body>
+</html>

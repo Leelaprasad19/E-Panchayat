@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/adminStyle.css') }}">
+
+    <title>Details</title>
+</head>
+<body>
+    
+    <form action="/details" method="post" class="center">
+        <input type="text" name="username" placeholder="Username">
+        <br>
+        <input type="password" name="password" placeholder="Enter Password">
+        <br>
+        <input type="text" name="rpassword" placeholder="Re-type Password">
+        <br>
+        <input type="text" name="address" placeholder="Address">
+        <br>
+        <input type="submit" value="Add Officer">
+        <br>
+        <input type="button" value="Click to go home" onclick="location.href='/admin'">
+    </form>
+
+</body>
+</html>

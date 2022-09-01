@@ -1,0 +1,56 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    background-color: rgba(77, 125, 141, 0.8);
+
+    background-image: url('https://images.unsplash.com/photo-1519681393784-d120267933ba?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1124&q=100');
+    background-size: 100vw 100vh;
+    background-repeat: no-repeat;
+}
+
+.center{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border: 5px solid #FFFF00;
+    padding: 40px;
+
+    backdrop-filter: blur(0px) saturate(200%);
+    -webkit-backdrop-filter: blur(0px) saturate(200%);
+    background-color: rgba(156, 135, 135, 0.48);
+    border-radius: 12px;
+    border: 1px solid rgba(94, 121, 161, 0.3);
+}
+
+input, label{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    border: 1px solid rgba(51, 85, 137);
+    font-size: larger;
+    border-radius: 10px;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    outline: 0px;
+
+    width: 100%;
+    font-weight: bold;
+}
+
+input[type=text],input[type=password]{
+    background-color: rgb(255, 255, 255, 0.6);
+}
+
+input[type=submit],input[type=button]{
+    background-color: rgba(171, 66, 66, 0.6);
+}
+
+input[type=submit]:hover,input[type=button]:hover{
+    background-color: rgba(227, 142, 142, 0.6);
+    color: white;
+}
+
+input::placeholder{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}

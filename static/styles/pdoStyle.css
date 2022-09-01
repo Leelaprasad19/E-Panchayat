@@ -1,0 +1,102 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    background-image: url('https://cdn.wallpapersafari.com/51/8/Cd8uVM.jpg');
+    
+    background-size: 100vw 100vh;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    color: whitesmoke;
+
+}
+.align{
+    position: relative;
+    padding: 40px;
+    border-radius: 12px;
+}
+
+.center-1{
+
+    position: relative;
+    padding: 40px;
+
+    backdrop-filter: blur(3px) saturate(200%);
+    -webkit-backdrop-filter: blur(3px) saturate(200%);
+    background-color: rgba(35, 30, 179, 0.26);
+    border-radius: 12px;
+    border: 1px solid rgba(94, 121, 161, 0.3);
+
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.center-2{
+    position: relative;
+    padding: 40px;
+
+    backdrop-filter: blur(1px) saturate(200%);
+    -webkit-backdrop-filter: blur(1px) saturate(200%);
+    background-color: rgba(179, 30, 105, 0.26);
+    border-radius: 12px;
+    border: 1px solid rgba(94, 121, 161, 0.3);
+
+    width: 100%;
+}
+
+h1{
+    text-align: center;
+}
+
+table, td, th {
+    border: 1px solid black;
+}
+
+th{
+    background-color: blue;
+}
+
+td{
+    padding: 3px;
+}
+
+table{
+    font-size: 1.3em;
+    width: 100%;
+    text-align: center;
+    border-collapse: collapse;
+}
+
+input{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    border: 1px solid rgba(51, 85, 137);
+    font-size: larger;
+    border-radius: 10px;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    outline: 0px;
+
+    width: 100%;
+    font-weight: bold;
+}
+
+input[type=text],input[type=password]{
+    background-color: rgb(255, 255, 255, 0.6);
+}
+
+input[type=submit],input[type=button]{
+    background-color: rgba(227, 142, 142, 0.6);
+
+}
+
+input[type=submit]:hover,input[type=button]:hover{
+    background-color: green;
+    cursor: pointer;
+    color: white;
+}
+
+input::placeholder{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}

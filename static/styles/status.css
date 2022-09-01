@@ -1,0 +1,12 @@
+
+.label,.content{
+    font-size: larger;
+}
+
+.content{
+    font-weight: 500;
+}
+
+.label{
+    font-weight: bolder;
+}

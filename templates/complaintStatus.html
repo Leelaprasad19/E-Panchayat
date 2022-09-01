@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style.css') }}">
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/status.css') }}">
+
+    <style>
+        body{    
+            background-image: url('https://cdn.wallpapersafari.com/51/8/Cd8uVM.jpg');
+
+            background-attachment: fixed;
+
+            margin: 30px;
+    }
+
+    .otherCenter{
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, -0%);
+        border: 5px solid #FFFF00;
+        padding: 40px;
+
+        backdrop-filter: blur(0px) saturate(200%);
+        -webkit-backdrop-filter: blur(0px) saturate(200%);
+        background-color: rgba(156, 135, 135, 0.48);
+        border-radius: 12px;
+        border: 1px solid rgba(94, 121, 161, 0.3);
+    }
+    </style>
+    <title>Complaint Status</title>
+</head>
+<body>
+    
+    <form action="/complaintStatus/{{info[0][0]}}" method="post" class="otherCenter" enctype="multipart/form-data">
+
+        <div>
+            <img src="/static/complaint images/{{compImage}}" alt="Complaint Image" width="350px" height="350px" style="border-radius: 5px;">
+        </div>
+        <div>
+            <img src="/static/location images/{{locImage}}" alt="Location Image" width="350px" height="350px" style="border-radius: 5px;">
+        </div>
+
+
+        <div>
+            <span class="label">Complaint ID : </span><span class="content">{{info[0][0]}}</span><br>
+            <span class="label">Complaint name : </span><span class="content">{{info[0][1]}}</span><br>
+            <span class="label">Complaint Details : </span><span class="content">{{info[0][2]}}</span><br>
+            <span class="label">Complaint Status : </span><span class="content">{{info[0][6]}}</span><br>
+        </div>
+
+        <br>
+        <input type="text" name="status" placeholder="Status (optional)"><br>
+        <input type="file" name="CompImage" accept="image/*" placeholder="Upload Image"><br>
+        <input type="submit" value="Update Status">
+        <input type="button" value="Click to go home" onclick="location.href='/PDO'">
+    </form>
+    
+
+</body>
+</html>
