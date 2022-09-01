@@ -316,4 +316,4 @@ def feedback():
     mydb.commit()
     return render_template('tempAll.html', pagename='Thank you', content="Thank you for your valuable feedback", url="/home", urlName="Click to go home")
 
-app.run(host='0.0.0.0', debug=True)
+app.run()
